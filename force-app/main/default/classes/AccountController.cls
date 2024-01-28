@@ -1,4 +1,4 @@
-public with sharing class AccountController {
+public with sharing class AccountController{
     
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccounts(){
@@ -12,7 +12,7 @@ public with sharing class AccountController {
 
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountsName(string accName){
-        
+        system.debug('In Line 15**********');
        return [select Id, Name from Account where Name Like:accName];
     }
     @AuraEnabled(cacheable=true)
