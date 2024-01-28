@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  title="Carousel Child Component">
+        
+            <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Basic Carousel
+            <lightning-carousel>
+                <template  for:each={carouselDetails} for:item="carousel"> 
+                    <lightning-carousel-image
+                    key={carousel.header}
+                    src = {carousel.src}
+                    header = {carousel.header}
+                    description = {carousel.description}
+                    ></lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+     </div>
+    </lightning-card>
+</template>

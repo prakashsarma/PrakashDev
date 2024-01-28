@@ -1,0 +1,18 @@
+<template>
+    <div class = "slds-p-around_x-large">
+   <c-child-alert-component
+   message = "Your browser is currently not supported. Your Salesforce may be degraded." link = "More Information"
+   ></c-child-alert-component>
+  
+    <c-child-carousel-component carousel-details ={carouselData} ></c-child-carousel-component>
+   </div>
+    <lightning-card  variant="Narrow"  title="Progress bar">
+        <div class="slds-m-around_medium">
+            <lightning-input type="number" label="Enter Percentage" onkeyup={chnageHandler} placeholder="type here..."></lightning-input>
+        </div>
+        <div class="slds-m-around_medium">
+            Progress Bar
+            <c-progress-bar-component percentage-value ={progressPercentage}></c-progress-bar-component>
+        </div>
+   </lightning-card>
+</template>

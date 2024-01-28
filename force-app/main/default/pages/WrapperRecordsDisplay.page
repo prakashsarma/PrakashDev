@@ -1,0 +1,26 @@
+<apex:page controller="WrapperRecordsDisplayController" >
+    <apex:Form >
+        <apex:pageBlock title="Table Wrapper Records ">
+            <apex:pageBlockTable value="{!wrapperDataList}" var="wrp">
+                <apex:column headerValue="Select">
+                    <apex:inputCheckbox value="{!wrp.isChecked}"/>         
+                 </apex:column>            
+                <apex:column headerValue="Account Name" value="{!wrp.accountName}" />
+                <apex:column headerValue="Account Email" value="{!wrp.accountPhone}" />
+                <apex:column headerValue="Account Phone" value="{!wrp.accountEmail}"/>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons location="Bottom">
+                <apex:commandButton value="Selected" action="{!displaySelectedRecords}" reRender="selected" />   
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock title="Selected Values" >
+            <apex:pageBlockSection >
+            <apex:pageBlockTable value="{!selectedRecords}"  id="selected" var="selrec">           
+                <apex:column headerValue="Account Name" value="{!selrec.accountName}" />
+                <apex:column headerValue="Account Email" value="{!selrec.accountPhone}" />
+                <apex:column headerValue="Account Phone" value="{!selrec.accountEmail}"/>
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:Form>
+</apex:page>

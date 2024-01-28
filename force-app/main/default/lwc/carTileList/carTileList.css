@@ -1,0 +1,11 @@
+c-car-tile{
+    min-width: 200px;
+    flex:1;
+}
+.content{
+    display:flex;
+    flex-wrap:wrap;
+}
+.bigtail{
+    background-color: rgb(202, 205, 207);
+}

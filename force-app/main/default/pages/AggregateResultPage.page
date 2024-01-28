@@ -1,0 +1,15 @@
+<apex:page controller="AggregateResultController">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!aggregateResultList}" var="aggobj">
+                <apex:column value="{!aggobj['oppCount']}"> 
+                    <apex:facet name="header">Count</apex:facet>
+                </apex:column>
+                            
+                <apex:column value="{!aggobj['oppStage']}" >
+                    <apex:facet name="header">Stage Name</apex:facet>
+                    </apex:column>
+            </apex:pageBlockTable>	
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

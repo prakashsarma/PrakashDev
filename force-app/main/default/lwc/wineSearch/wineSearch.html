@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title = "Wine Search">
+        <div style="padding: 0 1rem">
+        <lightning-layout horizontal-align="space">
+            <lightning-layout-item size="8">
+                <lightning-input
+                type= "Search"
+                variant="label-hidden"
+                placeholder="Search recipe by ingredients"
+                value={wineName}
+                onchange={handleChange}
+                ></lightning-input>
+            <lightning-layout-item size="8" padding = "horizontal-medium">
+                <lightning-layout horizontal-align="start">
+                    <lightning-layout-item padding="horizontal-medium">
+                      <lightning-button
+                        label="Search"
+                        onclick={handleonclick}
+                      ></lightning-button>
+                    </lightning-layout-item>
+                  </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout-item>
+        </lightning-layout>
+      <lightning-layout horizontal-align="space">
+        <lightning-layout-item flexibility="auto" padding="around-small">
+          <div class="slds-text-heading_medium">
+        <template if:true ={hasDetails}>
+          <P> <b>Wine Description : </b>{text}</P> <br/>
+        </template>
+        <template if:true ={hasPairing}>
+          <P> <b>Perfect Pairings : </b>{pairing}</P>
+        </template>
+      </div>
+      </lightning-layout-item>
+      </lightning-layout>
+    </div>
+    </lightning-card>
+</template>

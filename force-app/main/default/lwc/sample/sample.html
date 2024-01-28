@@ -1,0 +1,14 @@
+<template>
+    <lightning-card>
+        <h1>Calculator </h1>
+       <lightning-input type="text" variant="standard" name="fNumber" label="First Number" value ={firstNumber} onchange={handelResultChanges} ></lightning-input>
+       <lightning-input type="text" variant="standard" name="sNumber" label="Second Number" value ={secondNumber} onchange={handelResultChanges} ></lightning-input>    
+         <div slot ="footer">
+           {result}
+            </div>
+       <lightning-button variant="base" label="ADD" title="ADD" onclick={handelAddResult}></lightning-button>
+       <lightning-button variant="base" label="Sub" title="Sub" onclick={handelSubResult}></lightning-button>
+       <lightning-button variant="base" label="Mul" title="Mul" onclick={handelMulResult}></lightning-button>
+       <lightning-button variant="base" label="Division" title="Division" onclick={handelDivResult}></lightning-button>
+    </lightning-card>
+</template>

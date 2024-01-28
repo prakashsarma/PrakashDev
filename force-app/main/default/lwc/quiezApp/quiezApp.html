@@ -1,0 +1,53 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Quiz App Page" icon-name="standard:question_feed">
+        <div class="slds-m-around_medium">
+            
+            <form>
+            <template for:each={myquestions} for:item="quiz">
+                <div key={quiz.id}>
+                    <div><Strong>{quiz.id}---{quiz.question}</Strong></div>
+                    <div class="slds-grid slds-gutters slds-p-bottom_medium">
+                        <div class="slds-col ">
+                            <input type="radio" name={quiz.id} value="a" onchange={changeHandler}/>
+                          {quiz.answers.a}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={quiz.id} value="b" onchange={changeHandler}/>
+                            {quiz.answers.b}
+                        </div>
+                        <div class="slds-col">
+                            <input type="radio" name={quiz.id} value="c" onchange={changeHandler}/>
+                            {quiz.answers.c}
+                        </div>
+                      </div>
+                </div>
+            </template>
+            <div class= "slds-p-around_medium">
+                <template if:true={isSubmitted}>
+                    <div class={isScroedFull}> You have Scored {correctAnswers} answers out of {myquestions.length} </div>
+                </template>
+            </div>
+             <lightning-button 
+             variant="Brand" 
+             label="Submit" 
+             title="Submit answer" 
+             type = "submit"
+             class ="slds-m-around_medium"
+             disabled ={allNoteSelected} 
+             onclick={handleSubmit}>
+            </lightning-button>
+            <lightning-button 
+             variant="Brand" 
+             label="Reset" 
+             title="Reset answer" 
+             type = "reset"
+             class ="slds-m-around_medium"
+             onclick={handleReset}>
+            </lightning-button>
+            </form>
+        </div>
+        <p slot="footer">
+            <c-copy-right-content></c-copy-right-content>
+        </p>
+    </lightning-card>
+</template>

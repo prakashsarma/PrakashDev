@@ -1,0 +1,12 @@
+<template>
+    <lightning-card icon-name="Leave Tracker" variant="base">
+        <lightning-tabset>
+            <lightning-tab label="My Leave">
+                <c-my-leaves onrefreshleaverequests ={refreshleaverequests} lwc:ref="myLeavescomp"></c-my-leaves>
+            </lightning-tab>
+            <lightning-tab label="Leave Request">
+                <c-leave-requests></c-leave-requests>
+            </lightning-tab>
+        </lightning-tabset>
+    </lightning-card>
+</template>

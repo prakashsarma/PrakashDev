@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project__c</fullName>
+    <externalId>false</externalId>
+    <label>Project</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core Project</fullName>
+                <default>false</default>
+                <label>Core Project</label>
+            </value>
+            <value>
+                <fullName>Service Project</fullName>
+                <default>false</default>
+                <label>Service Project</label>
+            </value>
+            <value>
+                <fullName>Support Project</fullName>
+                <default>false</default>
+                <label>Support Project</label>
+            </value>
+            <value>
+                <fullName>Sales Project</fullName>
+                <default>false</default>
+                <label>Sales Project</label>
+            </value>
+            <value>
+                <fullName>Technical Project</fullName>
+                <default>false</default>
+                <label>Technical Project</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

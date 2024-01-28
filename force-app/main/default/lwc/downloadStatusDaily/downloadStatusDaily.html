@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Download Data">
+            <div class="slds-m-around_medium">
+                <template if:true={statusData}>
+                    <lightning-datatable
+                        key-field="id"
+                        data={statusData}
+                        columns={columns}>
+            </lightning-datatable>
+                </template>
+                <lightning-button variant="brand" label="Download Status data" onclick={downloadStatusData}></lightning-button>
+            </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,11 @@
+<template>
+    <template if:true={isSpinner}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading" size="medium" ></lightning-spinner>
+        </div>
+    </template>
+        <lightning-card title="Connected call back">
+            <lightning-datatable data={accountList} columns={colm} key-field="Id"> 
+            </lightning-datatable>
+        </lightning-card>
+</template>

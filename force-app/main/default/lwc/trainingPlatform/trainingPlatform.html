@@ -1,0 +1,12 @@
+<template>
+    <div class="slds-global-header__logo" style="background-image: url(/img/salesforce-noname-logo-v2.svg?width=128&height=128)"></div>
+       <lightning-input type="Search" label="Search Course Name" onchange={handleKeyChange}></lightning-input>
+       <lightning-button variant="base" label="Login" title="Login" onclick={handleClick}></lightning-button>
+       <lightning-button variant="base" label="SignUp" title="SignUp" onclick={handleClick}></lightning-button>
+        <div class="slds-box slds-grid slds-gutters slds-wrap">
+         <template for:each={courseDetailInfo} for:item="course">
+        <c-courses key={course.courseName} course-detail-info={course} class="slds-col">
+        </c-courses>
+       </template>
+    </div>
+</template>

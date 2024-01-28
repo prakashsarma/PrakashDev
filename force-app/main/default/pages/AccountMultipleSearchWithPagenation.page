@@ -1,0 +1,41 @@
+<apex:page controller="AccountMultipleSearchWithPagenationCLS" action="{!searchAcc}" >
+<script type="text/javascript">
+    window.onload=function() {
+    // document.getElementById("{!$Component.thePb.thepbs.accName}").focus();
+    } 
+    </script>
+    <apex:form >
+  <apex:pageBlock id="thePb" title="Account Details To Search">
+   <apex:pageblockSection id="thepbs">
+    <apex:inputField value="{!acc.Created_From_Date__c}" />
+     <apex:inputField value="{!acc.Created_To_Date__c}"/>
+     <apex:inputField value="{!acc.Name}" required="false" id="accName"/>
+     <apex:inputfield value="{!acc.accountNumber}"/>
+   </apex:pageblockSection>
+   <apex:pageblockButtons location="bottom">
+      <apex:commandButton value="Search" action="{!searchAcc}" />
+     </apex:pageblockButtons>  
+  </apex:pageBlock> 
+  <apex:pageBlock title="Account Details" id="noRec" rendered="{! IF( accountList != null && accountList.size ==0 , true, false)}" >
+  <apex:outputPanel >
+    <h1>No Records Found </h1>
+</apex:outputPanel>
+  </apex:pageBlock>
+  <apex:pageBlock title="Account Details" >
+   <apex:pageBlockTable value="{!accountList}" var="a">
+    <apex:column value="{!a.Name}" headerValue="Account Name"/>
+    <apex:column value="{!a.accountNumber}" headerValue="Account Number"/>  
+    <apex:column value="{!a.Industry}" headerValue="Industry"/>  
+    <apex:column value="{!a.AnnualRevenue}" headerValue="Annual Revenue"/>  
+  	<apex:column value="{!a.Phone}" headerValue="Phone"/>   
+  	<apex:column value="{!a.website}" headerValue="Web"/>    
+   </apex:pageBlockTable>
+      <apex:pageBlockButtons >
+      <apex:commandButton value="First Page"   action="{!firstPage}"/>
+       <apex:commandButton value="Previous Page" action="{!previousPage}"/>
+       <apex:commandButton value="Next" action="{!next}"/>
+       <apex:commandButton value="Last" action="{!LastPage}"/> -->
+  </apex:pageBlockButtons>
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,42 @@
+<apex:page controller="DisplayAccWithContact">
+    <script>
+    function cancleAction(){
+        $('requestLearningAccessCls').show();
+        $('NoValue').hide();
+    }
+    function replaceLink(){
+        $('requestLearningAccessCls').hide();
+          $('NoValue').show();
+    }
+    </script>
+    <apex:form >
+    <apex:pageBlock title="Display Account Related Contact's">
+        <apex:outputText value="Enter Account Name"></apex:outputText>
+        <td style = "width: 40px;"><apex:inputText value="{!accName}"/></td>
+        <td style = "width: 40px;"><apex:commandButton value="Search" action="{!showContacts}" rerender="out" status="mystatus"/></td><br/><br/>
+        <apex:outputLabel value="test visualforce LINKS"></apex:outputLabel>
+        <apex:outputPanel >
+                <a href="#" id="link-id" class="requestLearningAccessCls" onClick="replaceLink();"> Access </a> 
+            <div class = "NoValue" style = "display: none;">
+                <a href="#" >confirm</a> |<a href="#"   onClick="cancleAction();"> Cancel </a>   
+           
+            </div>
+        </apex:outputPanel>
+        <apex:actionStatus id="mystatus" starttext="please wait contacts are loading........">
+            <apex:facet name="stop"> 
+                <apex:outputPanel id="out">
+                    <apex:pageblock >
+                        <apex:pageBlockSection >
+                          <apex:pageBlockTable title="List of contacts" value="{!Contacts}" var="conList" rendered="{!accName !=null}">
+                              <apex:column headerValue="Name" > {!conList.Name} </apex:column>
+                              <apex:column headerValue="Phone" > {!conList.Phone} </apex:column>
+                              <apex:column headerValue="Email" > {!conList.Email} </apex:column>
+                            </apex:pageBlockTable>
+                        </apex:pageBlockSection>
+                    </apex:pageblock>
+                </apex:outputPanel>
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>

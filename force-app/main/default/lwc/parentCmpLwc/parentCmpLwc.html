@@ -1,0 +1,14 @@
+<template>
+    <lightning-card >Pass the values from parent lwc to child lwc.
+        <div class="slds slds-p-horizontal--medium">
+        <div class="slds-grid slds-wrap">
+               <div class=""><lightning-input type="Text" label="user Name" class="userName"></lightning-input></div>
+               <div class=""><lightning-input type="Text" label="user Email" class="userEmail"></lightning-input></div>
+               <div class=""><lightning-input type="Text" label="user Phone" class="userPhone"></lightning-input></div>
+               <div class=""><lightning-input type="Text" label="user Address" class="userAddress"></lightning-input></div>
+               <lightning-button label="Click" variant="brand" size="small" onclick={handleAction} ></lightning-button>
+        </div>
+        <c-child-cmp-lwc></c-child-cmp-lwc>
+        </div>
+    </lightning-card>
+</template>

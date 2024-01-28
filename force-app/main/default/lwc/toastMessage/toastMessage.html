@@ -1,0 +1,11 @@
+<template>
+    
+    <lightning-card title = "Show Toast Message" icon-name="custom:custom56" >
+        <div class="slds-p-around_large">
+         <lightning-input type="text" variant="standard" label="Message" data-name="msg" onchange={msgChange} ></lightning-input></br>
+         <lightning-button label="Show Toast" onclick={showToast}></lightning-button>&nbsp;&nbsp;&nbsp;
+         <lightning-button label="Cancle" onclick={cancleClick}></lightning-button>
+        </div>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card variant="base"> 
+          <template for:each={results} for:item="rec">
+            <p key={rec.listReference.relatedListId}>
+            </p>
+            <template for:each={rec.result.records} for:item="records">
+              <p key={records.fields.Name.value}>{records.fields.Name.value}</p>
+            </template>
+          </template>
+    </lightning-card> 
+</template>

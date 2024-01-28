@@ -1,0 +1,11 @@
+<apex:page standardController="Account" recordSetVar="accountList">
+    <apex:pageBlock >
+       <apex:pageBlockSection Title="Selected Account Records">
+           <apex:pageBlockTable value="{!Selected}" var="selRec">
+               <apex:repeat value="{!$ObjectType.Account.FieldSets.AccountSelected}" var="field">
+                   <apex:column headerValue="{!field.Label}" value="{!selRec[field]}" />
+               </apex:repeat>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

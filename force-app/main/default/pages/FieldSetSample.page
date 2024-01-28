@@ -1,0 +1,14 @@
+<apex:page controller="FieldSetSampleContoller" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:repeat value="{!fieldSet}" var="field">
+                    <apex:inputField value="{!caseObj[field]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!saveRecord}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

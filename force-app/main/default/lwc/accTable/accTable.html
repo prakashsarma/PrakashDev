@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Display Account Record Table">
+        <div class="slds-p-horizontal_small">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-no-row-hover" >
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                        <div class="slds-truncate">
+                            <lightning-input onchange={handleOnChange} type="checkbox"></lightning-input>
+                        </div>
+                        </th>
+                         <th class="" scope="col">
+                            <div class="slds-truncate" title="CaseNumber">Name</div>
+                         </th>
+                         <th class="" scope="col">
+                            <div class="slds-truncate" title="Subject">Phone</div>
+                         </th>
+                         <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Industry</div>
+                         </th> 
+                         <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Rating</div>
+                         </th>
+                         <th class="" scope="col">  
+                           <div class="slds-truncate" title="Status">Time(D-H_M-S)</div>
+                        </th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <template if:true={accountList} for:each={accountList} for:item="acc" for:index="index">
+                        
+                        <tr class="slds-hint-parent" key={acc.id} style={acc.styleColor} >
+                           <td scope="col">
+                              <div>
+                                  <lightning-input type="checkbox" value={acc.Name} data-id={acc.Id} disabled={acc.disabled} ></lightning-input>
+                              </div>
+                          </td>
+                         <td data-label="Name">
+                            <div class="slds-truncate" title="CaseNumber">{acc.Name}</div>
+                         </td>
+                         <td data-label="Phone">
+                            <div class="slds-truncate" title="Subject">{acc.Phone}</div>
+                         </td>
+                         <td data-label="Industry">   
+                            <div class="slds-truncate" title="Status">{acc.Industry}</div>
+                         </td> 
+                         <td data-label="Rating">
+                            <div class="slds-truncate" title="Status">{acc.Rating}</div>
+                         </td> 
+                           <td data-label="Time">
+                              <div class=”slds-cell-wrap”>{acc.CreatedDate} 
+                               <p>{timer}</p>
+                              </div>
+                           </td>
+                       </tr>
+                     </template>
+                </tbody>
+            </table> 
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title = "Car Image">
+        <div class="slds-m-around_xx-large">
+            <img src = {selectedCar} alt="Car Image" width="500px"/>
+        </div>
+        <p slot="footer">
+            <template for:each={colors} for:item="color">
+            <span key={color} data-color={color} onclick={selectedCarColor} class={color}></span>
+        </template>
+    </p>
+    </lightning-card>
+</template>
